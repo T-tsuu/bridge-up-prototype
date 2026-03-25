@@ -167,3 +167,56 @@ function buildNavbar(activePage="", role="") {
     </div>
   </nav>`;
 }
+
+
+// ─── Sticky Widget ───────────────────────────────────────────
+
+function initStickyWidget() {
+  // 1. Inject the HTML
+  const widget = document.createElement('div');
+  widget.id = 'stickyWidget';
+  widget.className = 'sticky-widget';
+  widget.innerHTML = `
+    <div class="sticky-widget__icon">
+      <span>📋</span>
+    </div>
+    <div class="sticky-widget__content">
+      <p>Interested in Bridge Up?</p>
+      <a
+        href="https://forms.gle/Ga3BMMrb7mSNCXHE9"
+        target="_blank"
+        class="sticky-widget__btn"
+      >
+        Give Feedback →
+      </a>
+    </div>
+  `;
+  document.body.appendChild(widget);
+
+  // 2. Click toggle
+  widget.addEventListener('click', (e) => {
+    if (e.target.closest('.sticky-widget__btn')) return;
+    widget.classList.toggle('is-open');
+  });
+
+  // 3. Auto-wiggle
+  function triggerWiggle() {
+    if (widget.classList.contains('is-open')) return;
+    widget.classList.add('wiggle');
+    widget.addEventListener('animationend', () => {
+      widget.classList.remove('wiggle');
+    }, { once: true });
+  }
+
+  setTimeout(() => {
+    triggerWiggle();
+    setInterval(triggerWiggle, 5000);
+  }, 3000);
+}
+
+// Run after the DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initStickyWidget);
+} else {
+  initStickyWidget(); // DOM already ready
+}
