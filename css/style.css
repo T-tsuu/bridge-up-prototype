@@ -549,29 +549,40 @@ a { text-decoration: none; color: inherit; }
 /* ── Sticky Widget ── */
 .sticky-widget {
   position: fixed;
-  top: 96px;
-  left: 36px;
+  bottom: 32px;
+  right: 32px;
   z-index: 9999;
 
   display: flex;
   align-items: center;
   gap: 12px;
   overflow: hidden;
-  text-align: centers;
 
-  background:linear-gradient(135deg,#FACC15,#F97316); /* match your brand color */
+  background: linear-gradient(135deg, #FACC15, #F97316);
   color: #000;
   border-radius: 50px;
   padding: 12px 14px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 
-  /* collapsed by default: only wide enough for the icon */
   max-width: 52px;
   transition: max-width 0.4s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sticky-widget:hover,
+/* Desktop only: hover expands the widget */
+@media (hover: hover) {
+  .sticky-widget:hover {
+    max-width: 280px;
+    padding: 12px 20px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+  }
+
+  .sticky-widget:hover .sticky-widget__content {
+    opacity: 1;
+  }
+}
+
+/* Both desktop (hover) and mobile (tap) */
 .sticky-widget.is-open {
   max-width: 280px;
   padding: 12px 20px;
@@ -592,7 +603,6 @@ a { text-decoration: none; color: inherit; }
   transition: opacity 0.25s ease 0.1s;
 }
 
-.sticky-widget:hover .sticky-widget__content,
 .sticky-widget.is-open .sticky-widget__content {
   opacity: 1;
 }
@@ -606,7 +616,7 @@ a { text-decoration: none; color: inherit; }
 
 .sticky-widget__btn {
   display: inline-block;
-  background: #4f46e5; /* accent color */
+  background: #4f46e5;
   color: #fff;
   text-decoration: none;
   text-align: center;
@@ -621,7 +631,6 @@ a { text-decoration: none; color: inherit; }
   background: #4338ca;
 }
 
-
 /* ── The wiggle keyframe ── */
 @keyframes wiggle {
   0%   { transform: rotate(0deg) scale(1);      background: linear-gradient(135deg, #FACC15, #F97316); }
@@ -633,12 +642,6 @@ a { text-decoration: none; color: inherit; }
   100% { transform: rotate(0deg) scale(1);      background: linear-gradient(135deg, #FACC15, #F97316); }
 }
 
-
 .sticky-widget.wiggle {
   animation: wiggle 0.6s ease-in-out;
-}
-
-/* ── Responsive Widget ── */
-@media(max-width:768px){
-  .sticky-widget { left: 24px; }
 }
