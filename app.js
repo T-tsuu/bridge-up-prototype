@@ -199,6 +199,13 @@ function initStickyWidget() {
     widget.classList.toggle('is-open');
   });
 
+  // Close when tapping anywhere else on the page
+  document.addEventListener('click', (e) => {
+    if (!widget.contains(e.target)) {
+      widget.classList.remove('is-open');
+    }
+  });
+
   // 3. Auto-wiggle
   function triggerWiggle() {
     if (widget.classList.contains('is-open')) return;
