@@ -79,6 +79,7 @@
 </head>
 
 <body>
+    <div id="auth-topbar" style="position: absolute; width: 100%"></div>
     <div class="login-wrap">
         <div class="login-left">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none"
@@ -156,9 +157,12 @@
         </div>
     </div>
     <div id="toast-container"></div>
+    <script src="translations.js"></script>
     <script src="db.js"></script>
     <script src="app.js"></script>
     <script>
+        I18N.init();
+        buildAuthPageBar();
         window.addEventListener("DOMContentLoaded", () => { const s = Auth.get(); if (s) go(s.role); });
         function fillDemo(e, p) { document.getElementById("loginEmail").value = e; document.getElementById("loginPassword").value = p; showToast("Demo credentials filled — click Sign In!", "info"); }
         document.getElementById("loginForm").addEventListener("submit", function (e) {
