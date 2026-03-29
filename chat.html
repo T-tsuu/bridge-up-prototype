@@ -45,9 +45,11 @@
         </div>
     </div>
     <div id="toast-container"></div>
+    <script src="translations.js"></script>
     <script src="db.js"></script>
     <script src="app.js"></script>
     <script>
+        I18N.init();
         const CONVOS = [
             { id: 1, name: "Djezzy HR Team", role: "Recruiter", msgs: [{ me: false, text: "Hello! We reviewed your application for the Marketing Intern position.", time: "10:20 AM" }, { me: true, text: "Hi! Thank you so much for reaching out. I'm very excited about this opportunity.", time: "10:25 AM" }, { me: false, text: "We'd like to schedule an interview. Are you available this week?", time: "10:26 AM" }, { me: true, text: "Absolutely! I'm available Tuesday and Thursday afternoon.", time: "10:28 AM" }, { me: false, text: "Perfect. We'll confirm via email. Please bring your CV and portfolio.", time: "10:30 AM" }], unread: 2 },
             { id: 2, name: "Sonatrach Recruitment", role: "Recruiter", msgs: [{ me: false, text: "Your profile came up in our talent search for engineering interns.", time: "Yesterday" }, { me: true, text: "Thank you! I would love to learn more about the opportunity.", time: "Yesterday" }, { me: false, text: "We're looking for students with AutoCAD experience. Do you have that?", time: "Yesterday" }], unread: 1 },

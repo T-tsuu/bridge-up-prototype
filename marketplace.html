@@ -116,9 +116,11 @@
     </div>
 
     <div id="toast-container"></div>
+    <script src="translations.js"></script>
     <script src="db.js"></script>
     <script src="app.js"></script>
     <script>
+        I18N.init();
         const CATS = ["All", "Web Development", "Graphic Design", "Video Editing", "Content Writing", "SEO", "Translation", "Social Media", "UI/UX Design"];
         const EMOJIS = { "Web Development": "🌐", "Graphic Design": "🎨", "Video Editing": "🎬", "Content Writing": "✍️", "SEO": "🔍", "Translation": "🌍", "Social Media": "📱", "UI/UX Design": "🖥️", "Photography": "📷", "Data Entry": "📊" };
         let briefs = [];

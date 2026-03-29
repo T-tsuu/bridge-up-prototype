@@ -146,9 +146,11 @@
     </div>
 
     <div id="toast-container"></div>
+    <script src="translations.js"></script>
     <script src="db.js"></script>
     <script src="app.js"></script>
     <script>
+        I18N.init();
         let uni, stats, uniStudents = [];
 
         window.addEventListener("DOMContentLoaded", () => {

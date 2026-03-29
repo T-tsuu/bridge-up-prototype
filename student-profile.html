@@ -172,9 +172,11 @@
     </div>
 
     <div id="toast-container"></div>
+    <script src="translations.js"></script>
     <script src="db.js"></script>
     <script src="app.js"></script>
     <script>
+        I18N.init();
         let student;
         window.addEventListener("DOMContentLoaded", () => {
             const s = Auth.requireAuth(["student"]); if (!s) return;
