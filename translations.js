@@ -131,6 +131,7 @@ const TRANSLATIONS = {
         "Skills (press Enter to add)": "Compétences (appuyez sur Entrée pour ajouter)",
         "Add": "Ajouter",
         "Maximum 5 interests.": "Maximum 5 intérêts.",
+        "Enter the University you study at...":"Entrez le nom de l'université où vous étudiez...",
 
         // ── STUDENT DASHBOARD ──
         "Welcome back 👋": "Bon retour 👋",

@@ -256,7 +256,7 @@
             const unis = BridgeDB.universities.map(u => `<option>${u.name}</option>`).join("");
             const flds = FIELDS.map(f => `<option>${f}</option>`).join("");
             if (r === "student") document.getElementById("p2fields").innerHTML = `
-    <div class="form-group"><label>University</label><select><option value="">Select…</option>${unis}</select></div>
+    <div class="form-group"><label>University</label><input type="text" id="f_name" placeholder="Enter the University you study at..."/></div>
     <div class="form-group"><label>Field of Study</label><select><option value="">Select…</option>${flds}</select></div>
     <div class="form-group"><label>Degree Type</label><select><option>Bachelor</option><option>Master</option><option>PhD</option><option>Engineer</option></select></div>
     <div class="form-group"><label>Academic Year</label><select><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option><option>5th Year</option><option>Graduate 2025</option></select></div>`;
